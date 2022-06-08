@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 
 <head>
@@ -7,7 +10,7 @@
 
 <body>
     <?php
-    session_start();
+    
     if (isset($_POST['submit'])) {
         $name = trim($_POST['name']);
         $age = trim($_POST['age']);
@@ -22,7 +25,7 @@
         <p>Edad:<input type="number" min=6 name="age" value="<?php
                                                                 if (isset($age)) echo "$age" ?>" /></p>
         <p>Email:<input type="text" name="email" value="<?php
-                                                         echo $_SESSION["email"]; ?>" /></p>
+                                                                if (isset($email)) echo "$email" ?>" /></p>
         <p>Telefono<input type="number" name="tel" value="<?php
                                                             if (isset($tel)) echo "$tel" ?>" /></p>
         <p><input type="submit" name="submit" value="Enviar" /></p>

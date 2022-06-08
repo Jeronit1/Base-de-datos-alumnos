@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="Style.css">
 <?php
+
 include("Union-Server.php");
 if (isset($_POST['submit'])) {
     if (empty($name)) {
@@ -21,7 +22,8 @@ if (isset($_POST['submit'])) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     } else{
     if (strlen($_POST['name']) > 1 && strlen($_POST['age']) > 1 && strlen($_POST['email']) > 1 && strlen($_POST['tel']) > 1) {
-        $Pedido = "INSERT INTO `base de datos alumnos`(`Nombre`, `Edad`, `Email`, `Telefono`, `Fecha de registro`) VALUES ('$name','$age','$email','$tel','$FechaRegistro')";
+        $Pedido = "INSERT INTO `base de datos alumnos`(`Nombre`, `Edad`, `Email`, `Telefono`, `Fecha de registro`, ID_Login) VALUES ('$name','$age','$email','$tel','$FechaRegistro',".$_SESSION['IDLogin'].")";
+        echo $Pedido;
         $Resultado = mysqli_query($conex, $Pedido);
         if ($Resultado) {
             echo "<h>Te inscribiste a alumnos</h>";

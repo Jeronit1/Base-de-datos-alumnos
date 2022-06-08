@@ -33,9 +33,6 @@ if (isset($_POST['submitUp'])) {
         $Resultado = mysqli_query($conex, $Pedido);
         if ($Resultado) {
             echo "<h>Te inscribiste a alumnos</h>";
-            session_start();
-            $_SESSION["email"] = "$email";
-            $_SESSION["contraseña2"] = "$contraseña2";
             header("location: Login.php");
         } else {
             echo "<h2>Ocurrio un error</h2>";

@@ -16,6 +16,7 @@
     }
     ?>
     <form action="" method="post">
+       
         <p>Nombre:<input type="text" name="name" value="<?php
                                                         if (isset($name)) echo "$name" ?>" /></p>
         <p>Email:<input type="text" name="email" value="<?php
