@@ -4,7 +4,7 @@
 include("Union-Server.php");
 
 if (isset($_POST['submitIn'])) {
-    $email = trim($_POST['mail']);
+    $email = trim($_POST['email']);
     $contraseña = trim($_POST['contraseña']);
 }
 
@@ -21,7 +21,7 @@ if (isset($_POST['submitIn'])) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     } else{
     if (strlen($_POST['email']) > 1 && strlen($_POST['contraseña']) > 1) {
-
+        
         $Resultado = mysqli_query($conex, $Pedido);
         if ($Resultado) {
             echo "<h>Ingresaste correctamente</h>";
