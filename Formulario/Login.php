@@ -1,20 +1,6 @@
 <?php
 session_start();
 include("Login-server.php");
-
-if(count($_POST)> 0) {
-    $query="select * from `login-alumnos` where email = '".$_POST["email"]."' and contraseña = '".$_POST["contraseña"]."'";
-    //echo $query;
-    $data=mysqli_query($conex,$query);
-    if (($row = mysqli_fetch_array($data))) {
-        //usuariologuado
-        $_SESSION["IDLogin"] = $row["IDLogin"]; 
-        header("location: Formulario.php");
-    } else {
-        //no hay usuaior
-    }
-
-}
 ?>
 <html>
 
