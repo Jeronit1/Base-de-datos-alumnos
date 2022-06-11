@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="Style.css">
 <?php
-
 include("Union-Server.php");
+    if ((empty ($_SESSION["email"]))) {
+            header("location: Login.php");
+        } else {
+        
 if (isset($_POST['submit'])) {
     if (empty($name)) {
         echo "<p class='error'>* Agregue su Nombre</p>";
@@ -30,5 +33,5 @@ if (isset($_POST['submit'])) {
         } else {
             echo "<h2>Ocurrio un error</h2>";
         }
-    }}
+    }}}
 }
