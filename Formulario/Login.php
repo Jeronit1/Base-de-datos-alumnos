@@ -15,6 +15,7 @@ include("Login-server.php");
                                                         if (isset($email)) echo "$email"?>"/></p>
         <p>Contraseña<input type="password" name="contraseña" value="" /></p>
         <p><input type="submit" name="submitIn" value="Iniciar sesion" /></p>
+        <a href="Registro.php"><input type="button" value="Registrarse"></a>
     </form>
     <?php
     include("Register-server.php");

@@ -34,7 +34,7 @@ if (isset($_POST['submitIn'])) {
             echo "<h2>Ocurrio un error</h2>";
         }
     }  else {
-        echo "";
+        echo "<p class='error'>*Datos Incorrectos</p>";
         //no hay usuaior
     }}} 
 } 
