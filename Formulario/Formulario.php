@@ -19,7 +19,8 @@ session_start();
         $FechaRegistro = date("y/m/d");
     }
     ?>
-    <form action="" method="post">
+    <a href="logout.php"><input type="button" value="Cerrar sesion" Cerrar Sesión></a>
+    <form action="" method="post" enctype="multipart/form-data">
         <p>Nombre:<input type="text" name="name" value="<?php
                                                         if (isset($name)) echo "$name" ?>" /></p>
         <p>Edad:<input type="number" min=6 name="age" value="<?php
@@ -27,9 +28,10 @@ session_start();
         <p>Email:<input type="text" name="email" value="<?php
                                                         echo $_SESSION["email"];?>" /></p>
         <p>Telefono<input type="number" name="tel" value="<?php
-                                                            if (isset($tel)) echo "$tel" ?>" /></p>
+                                                            if (isset($tel)) echo "$tel" ?>" /></p>                                                 
         <p><input type="submit" name="submit" value="Enviar" /></p>
     </form>
+    <script src="script.js"></script>
     <?php
     include("Server-Form.php");
     ?>
