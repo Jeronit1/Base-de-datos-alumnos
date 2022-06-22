@@ -1,10 +1,7 @@
-<link rel="stylesheet" href="Style.css">
 <?php
-//$Carpet_Destino=$_SERVER['DOCUMENT_ROOT'];
-//echo $Carpet_Destino;
-include("Union-Server.php");
+include("C:/xampp/htdocs/Formulario/Union-Server.php");
     if ((empty ($_SESSION["email"]))) {
-            header("location: Login.php");
+            header("location: /Formulario/Login/Login.php");
         } else {
         
 if (isset($_POST['submit'])) {
@@ -33,10 +30,7 @@ if (isset($_POST['submit'])) {
         //$Tamaño_Imagen=$_FILES['Imagen'] ['size'];
         $Carpeta_Destino='./intranet/uploads/';
         move_uploaded_file($_FILES['Imagen'] ['tmp_name'], $Carpeta_Destino.$Nombre_Imagen);
-        $Pedido= "INSERT INTO `base de datos alumnos`(`Nombre`, `Edad`, `Email`, `Telefono`, `Fecha de registro`, `Imagen`, `ID_Login`) VALUES ('$name','$age','$email','$tel','$FechaRegistro','$Carpeta_Destino$Nombre_Imagen',".$_SESSION['IDLogin'].")";        //echo $Pedido;
-        echo '<img src="'.$Carpeta_Destino.$Nombre_Imagen.'"/>';
-       
-
+        $Pedido= "INSERT INTO `base de datos alumnos`(`Nombre`, `Edad`, `Email`, `Telefono`, `Fecha de registro`, `Imagen`, `ID_Login`) VALUES ('$name','$age','$email','$tel','$FechaRegistro','$Carpeta_Destino$Nombre_Imagen',".$_SESSION['IDLogin'].")"; 
         $Resultado = mysqli_query($conex, $Pedido);
         if ($Resultado) {
             echo "<h>Te inscribiste a alumnos</h>";
