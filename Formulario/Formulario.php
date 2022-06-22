@@ -28,7 +28,8 @@ session_start();
         <p>Email:<input type="text" name="email" value="<?php
                                                         echo $_SESSION["email"];?>" /></p>
         <p>Telefono<input type="number" name="tel" value="<?php
-                                                            if (isset($tel)) echo "$tel" ?>" /></p>                                                 
+                                                            if (isset($tel)) echo "$tel" ?>" /></p>      
+        <input type="file" name="Imagen">                                           
         <p><input type="submit" name="submit" value="Enviar" /></p>
     </form>
     <script src="script.js"></script>
