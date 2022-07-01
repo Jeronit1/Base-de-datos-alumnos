@@ -18,6 +18,9 @@ $conexion= mysqli_connect('localhost','root','','tp-php')
             <td>Email</td>
             <td>Telefono</td>
             <td>Fecha de registro</td>
+            <td>Imagen</td>
+            <td>ID_Login</td>
+            <td>Editar</td>
         </tr>
         <?php
         $SQL= "SELECT * FROM `base de datos alumnos` WHERE 1";
@@ -31,9 +34,14 @@ $conexion= mysqli_connect('localhost','root','','tp-php')
             <td><?php echo $mostrar['Email'] ?></td>
             <td><?php echo $mostrar['Telefono'] ?></td>
             <td><?php echo $mostrar['Fecha de registro'] ?></td>
+            <td></a><?php  echo $mostrar['Imagen'] ?></td>
+            <td><?php echo $mostrar['ID_Login'] ?></td>
+            <td><a href="actualizar.php?ID=<?php echo $mostrar["ID"];?>">Editar/</a>
+            <a href="eliminar.php?ID=<?php echo $mostrar["ID"];?>">Eliminar</a>
+            </td>
         </tr>
         <?php
-        }
+        } mysqli_free_result($Resultado);
         ?>
     </table>
 </body>
