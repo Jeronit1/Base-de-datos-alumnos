@@ -1,5 +1,5 @@
 <?php
-include("C:/xampp2/htdocs/Formulario/Union-Server.php"); //incluye la union al servidor de mysql
+include("C:/xampp/htdocs/Formulario/Union-Server.php"); //incluye la union al servidor de mysql
 if (isset($_POST['submitIn'])) {//toma los datos del formulario registro y lo almaceno en variables
     $email = trim($_POST['email']);
     $contraseña = trim($_POST['contraseña']);

@@ -1,5 +1,12 @@
+<script>function otraPagina(){
+var confirmar = confirm('Se inscribio correctamente');
+if (confirmar){
+  
+  window.location.href = 'Formulario.php'
+
+}else {alert('hubo un error')}}</script>
 <?php
-include("C:/xampp2/htdocs/Formulario/Union-Server.php");
+include("C:/xampp/htdocs/Formulario/Union-Server.php");
     if ((empty ($_SESSION["email"]))) {//verifica que exista un mail y en caso de no existir lo manda al login(al cerrar sesion se destruye el mail lo que provoca que lo mande a login)
             header("location: /Formulario/Login/Login.php");
         } else {
@@ -30,9 +37,8 @@ if (isset($_POST['submit'])) {//toma los datos del formulario registro para subi
         $Pedido= "INSERT INTO `base de datos alumnos`(`Nombre`, `Edad`, `Email`, `Telefono`, `Fecha de registro`, `Imagen`, `ID_Login`) VALUES ('$name','$age','$email','$tel','$FechaRegistro','$Carpeta_Destino$Nombre_Imagen',".$_SESSION['IDLogin'].")"; //Inserta todos los datos a la base de datos
         $Resultado = mysqli_query($conex, $Pedido);//verifica que los datos se hayan enviado correctamente en el if de abajo
         if ($Resultado) {
-            echo "<h>Te inscribiste a alumnos</h>";//mensaje de que se inscribio correctamente
-        } else {
-            echo "<h2>Ocurrio un error</h2>";
-        }
+          echo "<script>otraPagina();</script>";//mensaje de que se inscribio correctamente
+        };
     }}}
 }
+?>
