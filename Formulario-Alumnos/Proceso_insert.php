@@ -1,5 +1,5 @@
 <script>function otraPagina(){
-var confirmar = confirm('Se actualizaron los cambios correctamente');
+var confirmar = confirm('Se inserto el usuario correctamente');
 if (confirmar){
   
   window.location.href = 'Tabla_Alumnos.php'
@@ -15,13 +15,13 @@ $Email = $_POST['Email'];
 $Telefono = $_POST['Telefono'];
 $Fecha = $_POST['Fechaderegistro'];
 $Imagen = $_POST['Imagen'];
-$ID_Login= $_POST['ID_Login'];
-//actualizar
-$actualizar = "UPDATE `base de datos alumnos` SET `ID`='$id',`Nombre`='$nombre',`Edad`='$edad',`Email`='$Email',`Telefono`='$Telefono',`Fecha de registro`='$Fecha',`Imagen`='$Imagen',`ID_Login`='$ID_Login' WHERE ID='$id'";
 
-$Resultado=mysqli_query($conexion,$actualizar);
+//insert
+$insertar = "INSERT INTO `base de datos alumnos`(`ID`, `Nombre`, `Edad`, `Email`, `Telefono`, `Fecha de registro`, `Imagen`) VALUES (`ID`='11',`Nombre`='$nombre',`Edad`='$edad',`Email`='$Email',`Telefono`='$Telefono',`Fecha de registro`='$Fecha',`Imagen`='$Imagen')";
+
+$Resultado=mysqli_query($conexion,$insertar);
 if ($Resultado){
-    echo "<script>otraPagina();</script>";
+   // echo "<script>otraPagina();</script>";
     
 } 
 ?>

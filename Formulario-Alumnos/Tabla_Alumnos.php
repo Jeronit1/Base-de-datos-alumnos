@@ -1,4 +1,5 @@
 <?php
+session_start();
 $conexion= mysqli_connect('localhost','root','','tp-php')
 ?>
 <!DOCTYPE html>
@@ -28,6 +29,8 @@ $conexion= mysqli_connect('localhost','root','','tp-php')
         while ($mostrar=mysqli_fetch_array($Resultado)) {
         ?>
         <tr>
+        <input type="hidden" value="<?php echo $mostrar['ID'] ?>" name="ID">
+        <?php $_SESSION["ID"] = $mostrar['ID'];?>
             <td><?php echo $mostrar['ID'] ?></td>
             <td><?php echo $mostrar['Nombre'] ?></td>
             <td><?php echo $mostrar['Edad'] ?></td>
@@ -44,6 +47,7 @@ $conexion= mysqli_connect('localhost','root','','tp-php')
         } mysqli_free_result($Resultado);
         ?>
     </table>
+    <button onclick="window.location.href = 'Agregar.php'">Anexar</button>
 </body>
 
 </html>
