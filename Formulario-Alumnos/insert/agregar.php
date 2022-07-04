@@ -33,6 +33,7 @@ $conexion= mysqli_connect('localhost','root','','tp-php')
         <div class="table-item"><input type="text" value="" name="Telefono" required minlength="6"></div>
         <div class="table-item"><input type="text" value=""name="Fechaderegistro" required minlength="8"></div>
         <div class="table-item"><input type="text" value="" name="Imagen" required minlength="1"></div>
+        <div class="table-item"><input type="text" value="" name="ID_Login" required minlength="1"></div>
         <button class="botonag" input type="submit" value="Agregar">Agregar</button>
         
         <?php

@@ -15,9 +15,9 @@ $Email = $_POST['Email'];
 $Telefono = $_POST['Telefono'];
 $Fecha = $_POST['Fechaderegistro'];
 $Imagen = $_POST['Imagen'];
-
+$ID_Login = $_POST['ID_Login'];
 //insert
-$insertar = "INSERT INTO `base de datos alumnos`(`ID`, `Nombre`, `Edad`, `Email`, `Telefono`, `Fecha de registro`, `Imagen`) VALUES ('$id','$nombre','$edad','$Email','$Telefono','$Fecha','$Imagen')";
+$insertar = "INSERT INTO `base de datos alumnos`(`ID`, `Nombre`, `Edad`, `Email`, `Telefono`, `Fecha de registro`, `Imagen`, `ID_Login`) VALUES ('$id','$nombre','$edad','$Email','$Telefono','$Fecha','$Imagen','$ID_Login')";
 
 $Resultado=mysqli_query($conexion,$insertar);
 if ($Resultado){
