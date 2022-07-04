@@ -11,33 +11,33 @@ $conexion= mysqli_connect('localhost','root','','tp-php')
 </head>
 <body>
 <form action="Proceso_insert.php" method="post">
-<table>
-        <tr>
-            <td>Nombre</td>
-            <td>Edad</td>
-            <td>Email</td>
-            <td>Telefono</td>
-            <td>Fecha de registro</td>
-            <td>Imagen</td>
-            <td>Editar</td>
-        </tr>
+    <div class="conteiner-tableup">
+        <div class="table-title">Anexar</div>
+        <div class="table_header">ID</div>
+        <div class="table_header">Nombre</div>
+        <div class="table_header">Edad</div>
+        <div class="table_header">Email</div>
+        <div class="table_header">Telefono</div>
+        <div class="table_header">Fecha de registro</div>
+        <div class="table_header">Imagen</div>
+        <div class="table_header">ID_Login</div>
+        <div class="table_header"> Editar</div>
         <?php
         $SQL= "SELECT * FROM `base de datos alumnos` WHERE 1";
         $Resultado=mysqli_query($conexion,$SQL);
         ?>
-        <tr>
-        <input type="hidden" value="<?php echo $mostrar['ID']+1 ?>" name="ID" >
-            <td><input type="text" value="" name="Nombre" required minlength="4"></td>
-            <td><input type="text" value="" name="Edad" required minlength="1"></td>
-            <td><input type="text" value="" name="Email" required minlength="5"></td>
-            <td><input type="text" value="" name="Telefono" required minlength="6"></td>
-            <td><input type="text" value=""name="Fechaderegistro" required minlength="8"></td>
-            <td><input type="text" value="" name="Imagen" required minlength="1"></td>
-            <td><input type="submit" value="Agregar"></td>
-            </tr>
+       <div class="table-item"><input type="hidden" value="<?php echo $mostrar['ID']+1 ?>" name="ID" ></div>
+        <div class="table-item"><input type="text" value="" name="Nombre" required minlength="4"></div>
+        <div class="table-item"><input type="text" value="" name="Edad" required minlength="1"></div>
+        <div class="table-item"><input type="text" value="" name="Email" required minlength="5"></div>
+        <div class="table-item"><input type="text" value="" name="Telefono" required minlength="6"></div>
+        <div class="table-item"><input type="text" value=""name="Fechaderegistro" required minlength="8"></div>
+        <div class="table-item"><input type="text" value="" name="Imagen" required minlength="1"></div>
+        <button class="botonag" input type="submit" value="Agregar">Agregar</button>
+        
         <?php
          mysqli_free_result($Resultado);
         ?>
-    </table>
+    </div>
     </form>
     </body>

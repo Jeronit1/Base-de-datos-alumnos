@@ -11,36 +11,35 @@ $conexion= mysqli_connect('localhost','root','','tp-php')
 
 <body>
     <form action="Proceso_delete.php" method="POST">
-    <table>
-        <tr>
-            <td>ID</td>
-            <td>Nombre</td>
-            <td>Edad</td>
-            <td>Email</td>
-            <td>Telefono</td>
-            <td>Fecha de registro</td>
-            <td>Imagen</td>
-            <td>ID_Login</td>
-            <td>Editar</td>
-        </tr>
+    <div class="conteiner-tableup">
+        <div class="table-title">Eliminar</div>
+        <div class="table_header">ID</div>
+        <div class="table_header">Nombre</div>
+        <div class="table_header">Edad</div>
+        <div class="table_header">Email</div>
+        <div class="table_header">Telefono</div>
+        <div class="table_header">Fecha de registro</div>
+        <div class="table_header">Imagen</div>
+        <div class="table_header">ID_Login</div>
+        <div class="table_header"> Editar</div>
         <?php
         $id = $_GET["ID"];
         $SQL= "SELECT * FROM `base de datos alumnos` WHERE ID = '$id'";
         $Resultado=mysqli_query($conexion, $SQL);
         while ($mostrar=mysqli_fetch_array($Resultado)) {
         ?>
-        <tr>
+        
         <input type="hidden" value="<?php echo $mostrar['ID'] ?>" name="ID">
-            <td><?php echo $mostrar['ID'] ?></td>
-            <td><?php echo $mostrar['Nombre'] ?></td>
-            <td><?php echo $mostrar['Edad'] ?></td>
-            <td><?php echo $mostrar['Email'] ?></td>
-            <td><?php echo $mostrar['Telefono'] ?></td>
-            <td><?php echo $mostrar['Fecha de registro'] ?></td>
-            <td><?php echo $mostrar['Imagen'] ?></td>
-            <td><?php echo $mostrar['ID_Login'] ?></td>
-            <td> <input type="submit" value="Eliminar"></td>
-        </tr>
+        <div class="table-item"><?php echo $mostrar['ID'] ?></div>
+        <div class="table-item"><?php echo $mostrar['Nombre'] ?></div>
+        <div class="table-item"><?php echo $mostrar['Edad'] ?></div>
+        <div class="table-item"><?php echo $mostrar['Email'] ?></div>
+        <div class="table-item"><?php echo $mostrar['Telefono'] ?></div>
+        <div class="table-item"><?php echo $mostrar['Fecha de registro'] ?></div>
+        <div class="table-item"><?php echo $mostrar['Imagen'] ?></div>
+        <div class="table-item"><?php echo $mostrar['ID_Login'] ?></div>
+        <button class="botonel" input type="submit" value="Eliminar">Eliminar</button>
+        
         <?php
         }
         ?>
