@@ -1,5 +1,5 @@
 <?php
-$conexion= mysqli_connect('localhost','root','','tp-php')
+$conexion= mysqli_connect('localhost','root','','tp-php')//conexion al servidor
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,38 +10,39 @@ $conexion= mysqli_connect('localhost','root','','tp-php')
 </head>
 
 <body>
-    <form action="Proceso_delete.php" method="POST">
-    <div class="conteiner-tableup">
-        <div class="table-title">Eliminar</div>
-        <div class="table_header">ID</div>
-        <div class="table_header">Nombre</div>
-        <div class="table_header">Edad</div>
-        <div class="table_header">Email</div>
-        <div class="table_header">Telefono</div>
-        <div class="table_header">Fecha de registro</div>
-        <div class="table_header">Imagen</div>
-        <div class="table_header">ID_Login</div>
-        <div class="table_header"> Editar</div>
+    <form action="Proceso_delete.php" method="POST"><!-- Formulario que lleva al proceso de delete cuando se oprime el boton -->
+    <table>
+        <tr>
+            <td>ID</td><!-- columna id-->
+            <td>Nombre</td><!-- columna nombre-->
+            <td>Edad</td><!-- columna edad-->
+            <td>Email</td><!-- columna email-->
+            <td>Telefono</td><!-- columna telefono-->
+            <td>Fecha de registro</td><!-- columna fecha-->
+            <td>Imagen</td><!-- columna imagen-->
+            <td>ID_Login</td><!-- columna id_login-->
+            <td>Editar</td><!-- columna editar-->
+        </tr>
         <?php
-        $id = $_GET["ID"];
-        $SQL= "SELECT * FROM `base de datos alumnos` WHERE ID = '$id'";
-        $Resultado=mysqli_query($conexion, $SQL);
-        while ($mostrar=mysqli_fetch_array($Resultado)) {
+        $id = $_GET["ID"];//se obtiene el id del usuario a eliminar
+        $SQL= "SELECT * FROM `base de datos alumnos` WHERE ID = '$id'";//se selecciona el usuario con tal id
+        $Resultado=mysqli_query($conexion, $SQL);// se hace la conexion
+        while ($mostrar=mysqli_fetch_array($Resultado)) {//se imprime la tabla del usuario a eliminar
         ?>
-        
-        <input type="hidden" value="<?php echo $mostrar['ID'] ?>" name="ID">
-        <div class="table-item"><?php echo $mostrar['ID'] ?></div>
-        <div class="table-item"><?php echo $mostrar['Nombre'] ?></div>
-        <div class="table-item"><?php echo $mostrar['Edad'] ?></div>
-        <div class="table-item"><?php echo $mostrar['Email'] ?></div>
-        <div class="table-item"><?php echo $mostrar['Telefono'] ?></div>
-        <div class="table-item"><?php echo $mostrar['Fecha de registro'] ?></div>
-        <div class="table-item"><?php echo $mostrar['Imagen'] ?></div>
-        <div class="table-item"><?php echo $mostrar['ID_Login'] ?></div>
-        <button class="botonel" input type="submit" value="Eliminar">Eliminar</button>
-        
+        <tr>
+        <input type="hidden" value="<?php echo $mostrar['ID'] ?>" name="ID"><!-- id oculto para guardar el id y poder hacer el proceso de delete no mostrar este input -->
+            <td><?php echo $mostrar['ID'] ?></td><!-- se muestra el ID-->
+            <td><?php echo $mostrar['Nombre'] ?></td><!-- se muestra el Nombre-->
+            <td><?php echo $mostrar['Edad'] ?></td><!-- se muestra la edad-->
+            <td><?php echo $mostrar['Email'] ?></td><!-- se muestra el mail-->
+            <td><?php echo $mostrar['Telefono'] ?></td><!-- se muestra el telefono-->
+            <td><?php echo $mostrar['Fecha de registro'] ?></td><!-- se muestra la fecha-->
+            <td><?php echo $mostrar['Imagen'] ?></td><!-- se muestra la imagen(URL)-->
+            <td><?php echo $mostrar['ID_Login'] ?></td><!-- se muestra el ID_Login-->
+            <td> <input type="submit" value="Eliminar"></td><!-- boton que lleva al proceso de delete-->
+        </tr>
         <?php
-        }
+        } 
         ?>
     </table>
     </form>
