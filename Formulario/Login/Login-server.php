@@ -22,6 +22,10 @@ if (isset($_POST['submitIn'])) {//toma los datos del formulario registro para su
         if (($row = mysqli_fetch_array($Resultado))) {//le da un numero de login al usuario para identificarlo en la columna IDLogin
             //usuariologuado
             $_SESSION["IDLogin"] = $row["IDLogin"]; 
+            $_SESSION["UserAdmin"] = $row["administrador"]; 
+
+            //if $_SESSION["UserAdmin"] != 1  no es administrador
+            //header()
         if ($Resultado) {//verifica que los datos se envien a la base de datos
             echo "<h>Ingresaste correctamente</h>";
             header("location: /Formulario/Formulario.php");//lo envia al login

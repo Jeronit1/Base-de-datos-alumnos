@@ -19,6 +19,9 @@ session_start();//se inicia la sesion que sirve para guardar variables globales 
     }
     ?>
     <a href="/Formulario/Login/logout.php"><input type="button" value="Cerrar sesion" Cerrar Sesión></a><!--boton que provoca que la sesion se cierre-->
+   <?php if ($_SESSION["UserAdmin"]) {//si el usuario es el administrador = se ve el boton ver usuarios?>
+    <a href="/Formulario/Usuarios_logeados.php"><input type="button" value="Ver usuarios"></a><!--boton que lleva a la tabla de usuarios logeados-->
+    <?php }?>
     <form action="" method="post" enctype="multipart/form-data">
         <p>Nombre:<input type="text" name="name" value="<?php
                                                         if (isset($name)) echo "$name" ?>" /></p><!--El if  Deja escrito en el contenido cuando se recarga la pagina -->
@@ -35,7 +38,6 @@ session_start();//se inicia la sesion que sirve para guardar variables globales 
         <script src="script.js"></script><!-- se une el script que hace que se muestre la imagen subida-->
         <p><input type="submit" name="submit" value="Enviar" /></p>
     </form>
-
     <?php
     include("Server-Form.php");//Unir el codigo del server-form
     ?>

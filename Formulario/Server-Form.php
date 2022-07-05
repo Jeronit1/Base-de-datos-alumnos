@@ -1,4 +1,4 @@
-<script>function otraPagina(){
+<script>function otraPagina(){//da un mensaje cuando se inscribe correctamente
 var confirmar = confirm('Se inscribio correctamente');
 if (confirmar){
   
@@ -6,8 +6,10 @@ if (confirmar){
 
 }else {alert('hubo un error')}}</script>
 <?php
+//include
 include("C:/xampp/htdocs/Formulario/Union-Server.php");
-    if ((empty ($_SESSION["email"]))) {//verifica que exista un mail y en caso de no existir lo manda al login(al cerrar sesion se destruye el mail lo que provoca que lo mande a login)
+//verifica que exista un mail y en caso de no existir lo manda al login(al cerrar sesion se destruye el mail lo que provoca que lo mande a login)
+    if ((empty ($_SESSION["email"]))) {
             header("location: /Formulario/Login/Login.php");
         } else {
         
