@@ -11,6 +11,12 @@ $conexion= mysqli_connect('localhost','root','','tp-php')//se hace la conexion a
 </head>
 
 <body>
+<?php
+if ((($_SESSION["UserAdmin"]==0))) {//si el usuario no es administrador lo devuelve al formulario
+            header("location: /Formulario/formulario.php");
+        } else {
+    ?>
+    <a href="/Formulario/Login/logout.php"><input type="button" value="Cerrar sesion" Cerrar Sesión></a><!--boton que provoca que la sesion se cierre-->
     <table>
         <tr> <!-- fila de la tabla-->
             <td>ID</td> <!-- columna id-->
@@ -43,7 +49,7 @@ $conexion= mysqli_connect('localhost','root','','tp-php')//se hace la conexion a
             </td>
         </tr>
         <?php
-        } mysqli_free_result($Resultado);
+        } }mysqli_free_result($Resultado);
         ?>
     </table>
     <button onclick="window.location.href = '/Formulario-Alumnos/insert/Agregar.php'">Anexar</button><!-- boton que lleva a anexar un nuevo usuario-->
