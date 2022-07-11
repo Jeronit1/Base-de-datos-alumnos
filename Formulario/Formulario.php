@@ -22,6 +22,9 @@ session_start();//se inicia la sesion que sirve para guardar variables globales 
    <?php if ($_SESSION["UserAdmin"]) {//si el usuario es el administrador = se ve el boton ver usuarios?>
     <a href="/Formulario/Usuarios_logeados.php"><input type="button" value="Ver usuarios"></a><!--boton que lleva a la tabla de usuarios logeados-->
     <?php }?>
+    <?php if ($_SESSION["UserAdmin"]) {//si el usuario es el administrador = se ve el boton ver usuarios?>
+    <a href="/Formulario-alumnos/Tabla_Alumnos.php"><input type="button" value="Editar tabla"></a><!--boton que lleva a la tabla de usuarios logeados-->
+    <?php }?>
     <form action="" method="post" enctype="multipart/form-data">
         <p>Nombre:<input type="text" name="name" value="<?php
                                                         if (isset($name)) echo "$name" ?>" /></p><!--El if  Deja escrito en el contenido cuando se recarga la pagina -->
