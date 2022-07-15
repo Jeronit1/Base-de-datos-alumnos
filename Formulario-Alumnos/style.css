@@ -9,3 +9,13 @@ form{
     text-align: center;
     margin: 0 auto; 
 }
+
+img {
+    width: 100px;
+    height: 100px;
+}
+.error {
+    color: red;
+    text-align: center;
+    align-items: center;
+}
