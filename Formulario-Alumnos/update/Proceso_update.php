@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {//toma los datos del formulario registro para subi
   if (strlen($_POST['Nombre']) > 1 && strlen($_POST['Edad']) > 1 && strlen($_POST['Telefono']) > 1) {//verifica que los campos no esten vacios
 //imagen
 $Nombre_Imagen=$_FILES['Imagen'] ['name'];//se obtiene el nombre de la imagen subida
-$Carpeta_Destino='./Formulario/intranet/uploads/';//sirve para guardar las imagenes en intranet
+$Carpeta_Destino='../../Formulario/intranet/uploads/';//sirve para guardar las imagenes en intranet
 move_uploaded_file($_FILES['Imagen'] ['tmp_name'], $Carpeta_Destino.$Nombre_Imagen);//mueve la imagen subida a intranet
 //actualizar
 $actualizar = "UPDATE `base de datos alumnos` SET `ID`='$id',`Nombre`='$Nombre',`Edad`='$Edad',`Telefono`='$Telefono',`Fecha de registro`='$Fecha',`Imagen`='$Carpeta_Destino$Nombre_Imagen',`ID_Login`='$ID_Login' WHERE ID='$id'";//se importan los datos del usuario a la base de datos con el proceso update

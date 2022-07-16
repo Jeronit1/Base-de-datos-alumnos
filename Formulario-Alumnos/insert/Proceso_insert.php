@@ -37,14 +37,14 @@ if (empty($Contraseña)) {//empty = si esta vacio
       {
 //imagen
 $Nombre_Imagen=$_FILES['Imagen'] ['name'];//se obtiene el nombre de la imagen subida
-$Carpeta_Destino='./Formulario/intranet/uploads/';//sirve para guardar las imagenes en intranet
+$Carpeta_Destino='../../Formulario/intranet/uploads/';//sirve para guardar las imagenes en intranet
 move_uploaded_file($_FILES['Imagen'] ['tmp_name'], $Carpeta_Destino.$Nombre_Imagen);//mueve la imagen subida a intranet
 //insert
 $insertar = "INSERT INTO `base de datos alumnos`(`ID`, `Nombre`, `Edad`, `Email`, `Telefono`, `Fecha de registro`, `Imagen`, `ID_Login`) VALUES ('$Id','$Nombre','$Edad','$Email','$Telefono','$Fecha','$Carpeta_Destino$Nombre_Imagen',$IDLogin)";//se almacena en una variable para hacer el proceso de insert a la base de datos
 $insertarLogin = "INSERT INTO `login-alumnos`(`IDLogin`, `Nombre`, `Email`, `Contraseña`, `Confirmacion`) VALUES ('$IDLogin','$Nombre','$Email','$Contraseña','$Contraseña')";//se almacena en una variable para hacer el proceso de insert a la base de datos
 //
-$Resultado=mysqli_query($conexion,$insertar);//se inserta el usuario en la base de datos
-$ResultadoLogin=mysqli_query($conexion,$insertarLogin);//se inserta el usuario en la base de datos
+$Resultado = mysqli_query($conexion,$insertar);//se inserta el usuario en la base de datos
+$ResultadoLogin = mysqli_query($conexion,$insertarLogin);//se inserta el usuario en la base de datos
 if ($Resultado && $ResultadoLogin){//tira el mensaje de todo bien y te regresa a la tabla_alumnos
     echo "<script>otraPagina();</script>";
     
