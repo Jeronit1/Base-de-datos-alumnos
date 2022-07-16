@@ -28,7 +28,7 @@ if (isset($_POST['submitIn'])) {//toma los datos del formulario registro para su
             //header()
         if ($Resultado) {//verifica que los datos se envien a la base de datos
             echo "<h>Ingresaste correctamente</h>";
-            header("location: /Formulario/Formulario.php");//lo envia al login
+            header("location: /Formulario/Usuario/PagPrincipal.php");//lo envia al login
         } else {
             echo "<h2>Ocurrio un error</h2>";
         }
